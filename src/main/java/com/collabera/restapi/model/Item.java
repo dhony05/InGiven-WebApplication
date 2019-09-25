@@ -1,14 +1,16 @@
 package com.collabera.restapi.model;
 
-public class Others {
+import java.time.LocalDate;
+public class Item {
 
 	private int id ;
 	private String name;
 	private String category;
 	private int quantity;
 	private int zipCode;
+	private LocalDate datePosted;
 	
-	public Others(int newId, String newName, String newCategory, int newQuantity, int zipCode) {
+	public Item(int newId, String newName, String newCategory, int newQuantity, int zipCode, LocalDate datePosted) {
 		this.id = newId;
 		this.name = newName;
 		this.category = newCategory;
@@ -57,10 +59,19 @@ public class Others {
 		this.zipCode = zipCode;
 	}
 
+
 	@Override
 	public String toString() {
-		return "Others [id=" + id + ", name=" + name + ", category=" + category + ", quantity=" + quantity
-				+ ", zipCode=" + zipCode + "]";
+		return "OtherItems [id=" + id + ", name=" + name + ", category=" + category + ", quantity=" + quantity
+				+ ", zipCode=" + zipCode + ", datePosted=" + datePosted + "]";
+	}
+
+	public LocalDate getDatePosted() {
+		return datePosted;
+	}
+
+	public void setDatePosted(LocalDate datePosted) {
+		this.datePosted = datePosted;
 	}
 	
 	
