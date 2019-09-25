@@ -1,4 +1,4 @@
-package com.collabera.InGiven.model;
+package com.collabera.restapi.model;
 
 public class Others {
 
