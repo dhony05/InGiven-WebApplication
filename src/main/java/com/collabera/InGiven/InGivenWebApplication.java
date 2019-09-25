@@ -10,6 +10,7 @@ public class InGivenWebApplication {
 		SpringApplication.run(InGivenWebApplication.class, args);
 		
 		//this is a test
+		// another test
 	}
 
 }
