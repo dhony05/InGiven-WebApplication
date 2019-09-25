@@ -8,11 +8,12 @@ public class Others {
 	private int quantity;
 	private int zipCode;
 	
-	public Others(int newId, String newName, String newCategory, int newQuantity) {
+	public Others(int newId, String newName, String newCategory, int newQuantity, int zipCode) {
 		this.id = newId;
 		this.name = newName;
 		this.category = newCategory;
 		this.quantity = newQuantity;
+		this.zipCode = zipCode;
 		
 	}
 
