@@ -1,8 +1,14 @@
 package com.collabera.restapi.model;
 
 import java.time.LocalDate;
+
+import javax.persistence.*;
+@Entity
 public class Item {
 
+	
+	//Model for other objects
+	
 	private int id ;
 	private String name;
 	private String category;

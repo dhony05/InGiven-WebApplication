@@ -13,6 +13,8 @@ public class OtherItemsService implements CRUD<Item>{
 	
 	private static List<Item> OTHERITEMS  = new ArrayList<Item>();
 	private static int idCounter = 1;
+	
+	
 	@Override
 	public Item addItem() {
 		// TODO Auto-generated method stub
