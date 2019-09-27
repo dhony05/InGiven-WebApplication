@@ -1,38 +1,34 @@
 package com.collabera.restapi.model;
 
+
 import java.time.LocalDate;
 
-import javax.persistence.*;
-@Entity
-@Table(name = "Other_items")
-public class Item {
-
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+import javax.validation.constraints.NotNull;
+public class ItemDTO {
 	
-	//Model for other objects 
-	//Creating colums names 
-	@Column(name = "item_id")
-	private Long item_id ;
-	@Column(name = "name")
+	private Long item_id;
+	
+	@NotNull
 	private String name;
-	@Column(name = "category")
+	
+	@NotNull
 	private String category;
-	@Column(name = "quantity")
+	
+	@NotNull
 	private int quantity;
-	@Column(name = "zipCode")
+	
+	@NotNull
 	private int zipCode;
-	@Column(name = "date_posted")
+	
+	@NotNull
 	private LocalDate datePosted;
-	
-	
 
-	public long getId() {
+	public Long getItem_id() {
 		return item_id;
 	}
 
-	public void setId(Long id) {
-		this.item_id = id;
+	public void setItem_id(Long item_id) {
+		this.item_id = item_id;
 	}
 
 	public String getName() {
@@ -75,7 +71,5 @@ public class Item {
 		this.datePosted = datePosted;
 	}
 	
-	
+
 }
-
-

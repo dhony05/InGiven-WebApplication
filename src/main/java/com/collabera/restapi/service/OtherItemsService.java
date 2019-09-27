@@ -1,59 +1,94 @@
 package com.collabera.restapi.service;
 
-import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
+import java.util.stream.Collectors;
 
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
-import com.collabera.restapi.Repository.CRUD;
+import com.collabera.restapi.Repository.ItemRepository;
 import com.collabera.restapi.model.Item;
+import com.collabera.restapi.model.ItemDTO;
+import com.collabera.restapi.model.ItemMapper;
 
 @Service
-public class OtherItemsService implements CRUD<Item>{
-	
-	private static List<Item> OTHERITEMS  = new ArrayList<Item>();
-	private static int idCounter = 1;
+@Transactional
+public class OtherItemsService {
 	
 	
-	@Override
-	public Item addItem() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-	@Override
-	public List<Item> getAllItems() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-	@Override
-	public List<Item> getItemsInCategory(String Category) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-	@Override
-	public List<Item> getItemsInzipCode(int zipCode) {
-		// TODO Auto-generated method stub
-		return null;
+	private final ItemRepository otherItemRepository;
+	private final ItemMapper otherItemMapper;
+	
+	public OtherItemsService(ItemRepository otherItemRepository, ItemMapper otherItemMapper) {
+		this.otherItemRepository = otherItemRepository;
+		this.otherItemMapper = otherItemMapper;
 	}
 	
+	public List<ItemDTO> getAllItems() {
+		return otherItemRepository.findAll().stream().map(other -> otherItemMapper.toDto(other)).collect(Collectors.toList());
 	
-	@Override
-	public void deleteAllItems() {
-		// TODO Auto-generated method stub
+	}
+	
+	/***
+	 * This method will handle the search for one item , will take the Id
+	 * @param id
+	 * @return
+	 */
+	public ItemDTO getItemInId(Long id) {
+		Optional<Item> otherItemTarget = otherItemRepository.findById(id);
+		if (otherItemTarget.isPresent()) {
+			return otherItemMapper.toDto(otherItemTarget.get());
+		}
+		return null;
+	}
+	
+	/***
+	 * Adding a new Item, setting the reference to instance 
+	 * @param newItem
+	 * @return
+	 */
+	public ItemDTO addingItem(ItemDTO newItem) {
+		Item otherItem_Entity = otherItemMapper.toEntity(newItem);
+		Item added = otherItemRepository.save(otherItem_Entity);
+		return otherItemMapper.toDto(added);
+	}
+	
+	public ItemDTO update(ItemDTO itemToUpdate) {
+		Long otherItemId= itemToUpdate.getItem_id();
+		Optional<Item> findById = otherItemRepository.findById(otherItemId);
+		if (findById.isPresent()) {
+			Item other = findById.get();
+			other.setCategory(itemToUpdate.getCategory());
+			other.setQuantity(itemToUpdate.getQuantity());
+			other.setZipCode(itemToUpdate.getZipCode());
+			Item added = otherItemRepository.save(other);
+			return otherItemMapper.toDto(added);
+		} else {
+			throw new IllegalArgumentException();
+		}
+	}
+
+
+
+
+	public void delete(Long id) {
+		otherItemRepository.deleteById(id);
 		
 	}
-	@Override
-	public void update(Item item) {
-		// TODO Auto-generated method stub
+	
+	public void deleteAll() {
+		otherItemRepository.deleteAll();
+		
 		
 	}
-	@Override
-	public void deleteItem(Item item) {
-		// TODO Auto-generated method stub
-		
-	}
+
+	
+
 	
 	
+	
+
 	
 
 
