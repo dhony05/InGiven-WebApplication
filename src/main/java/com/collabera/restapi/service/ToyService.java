@@ -2,10 +2,12 @@ package com.collabera.restapi.service;
 
 import java.util.Optional;
 
+
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.collabera.restapi.Repository.ToyRepository;
@@ -18,6 +20,7 @@ public class ToyService {
 	private final ToyRepository repository;
 	private final ToyMapper mapper;
 	
+	@Autowired
 	public ToyService(ToyRepository repository, ToyMapper mapper) {
 		this.repository = repository;
 		this.mapper = mapper;
@@ -27,8 +30,8 @@ public class ToyService {
 		return repository.findAll().stream().map(toy -> mapper.toDTO(toy)).collect(Collectors.toList());
 	}
 
-	public ToyDTO find(int id) {
-		Optional<Toy> toy = repository.findById((long)id);
+	public ToyDTO find(long id) {
+		Optional<Toy> toy = repository.findById(id);
 		return (toy.isPresent()) ? mapper.toDTO(toy.get()) : null;
 	}
 
