@@ -4,32 +4,34 @@ import java.time.LocalDate;
 
 import javax.persistence.*;
 @Entity
+@Table(name = "Other_items")
 public class Item {
 
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	
-	//Model for other objects
-	
-	private int id ;
+	//Model for other objects 
+	//Creating colums names 
+	@Column(name = "item_id")
+	private Long id ;
+	@Column(name = "name")
 	private String name;
+	@Column(name = "category")
 	private String category;
+	@Column(name = "quantity")
 	private int quantity;
+	@Column(name = "zipCode")
 	private int zipCode;
+	@Column(name = "date_posted")
 	private LocalDate datePosted;
 	
-	public Item(int newId, String newName, String newCategory, int newQuantity, int zipCode, LocalDate datePosted) {
-		this.id = newId;
-		this.name = newName;
-		this.category = newCategory;
-		this.quantity = newQuantity;
-		this.zipCode = zipCode;
-		
-	}
+	
 
-	public int getId() {
+	public long getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 
@@ -63,13 +65,6 @@ public class Item {
 
 	public void setZipCode(int zipCode) {
 		this.zipCode = zipCode;
-	}
-
-
-	@Override
-	public String toString() {
-		return "OtherItems [id=" + id + ", name=" + name + ", category=" + category + ", quantity=" + quantity
-				+ ", zipCode=" + zipCode + ", datePosted=" + datePosted + "]";
 	}
 
 	public LocalDate getDatePosted() {
