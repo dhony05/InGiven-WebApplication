@@ -9,6 +9,8 @@ import javax.validation.constraints.NotBlank;
 public class Book {
 
 	@NotBlank
+	private long id;
+	@NotBlank
 	private String title;
 	@NotBlank
 	private String genre;
@@ -17,6 +19,13 @@ public class Book {
 	@NotBlank
 	private int publicationYear;
 	
+	
+	public long getId() {
+		return id;
+	}
+	public void setId(long id) {
+		this.id = id;
+	}
 	
 	public String getTitle() {
 		return title;
