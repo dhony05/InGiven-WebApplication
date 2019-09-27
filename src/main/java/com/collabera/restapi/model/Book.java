@@ -2,15 +2,20 @@ package com.collabera.restapi.model;
 
 import javax.persistence.Entity;
 import javax.persistence.Table;
+import javax.validation.constraints.NotBlank;
 
 @Entity
 @Table (name = "books")
 public class Book {
 
-	public String title;
-	public String genre;
-	public String author;
-	public int publicationYear;
+	@NotBlank
+	private String title;
+	@NotBlank
+	private String genre;
+	@NotBlank
+	private String author;
+	@NotBlank
+	private int publicationYear;
 	
 	
 	public String getTitle() {
