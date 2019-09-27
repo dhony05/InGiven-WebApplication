@@ -2,10 +2,9 @@ package com.collabera.restapi.Repository;
 
 import java.util.List;
 
-import com.collabera.restapi.model.Item;
+import org.springframework.stereotype.Repository;
 
-
-
+@Repository
 public interface CRUD<T> {
 	
 	// Create
