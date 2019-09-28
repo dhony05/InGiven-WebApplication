@@ -9,6 +9,7 @@ public class BookMapper {
 		book.setAuthor(dto.getAuthor());
 		book.setGenre(dto.getGenre());
 		book.setPublicationYear(dto.getPublicationYear());
+		
 		return book;
 	}
 
@@ -19,7 +20,7 @@ public class BookMapper {
 		dto.setAuthor(entity.getAuthor());
 		dto.setGenre(entity.getGenre());
 		dto.setPublicationYear(entity.getPublicationYear());
-
+        
 		return dto;
 	}
 
