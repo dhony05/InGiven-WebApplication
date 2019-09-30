@@ -9,9 +9,6 @@ public class InGivenWebApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(InGivenWebApplication.class, args);
-		
-		//this is a test
-		// another test
 	}
 
 }
