@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
   <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -14,11 +14,9 @@
     <title>InGiven</title>
   </head>
   <body>
-
-  
-	<nav class="navbar navbar-dark bg-primary fixed-left" data-target="#paths">
+	<nav class="navbar navbar-dark bg-primary fixed-left d-flex" data-target="#paths">
 	    <a class="navbar-brand" href="#">InGiven</a>
-	    <div class="d-flex" id="paths">
+	    <div id="paths">
 	        <ul class="navbar-nav">
 	            <li class="nav-item">
 	                <a class="nav-link" href="/">Home</a>
@@ -52,33 +50,32 @@
 	            <small>For All Ages</small>
 	        </h1>
 	    </div>
-	</div>
 	
-	<div class="container">
-			<div class="row">
-				<div class="col-md-9 ">
-					<form th:object="${toy}" method="post">
-						<table class="table table-hover">
-							<thead>
-								<th scope="col">#</th>
-								<th scope="col">Name</th>
-								<th scope="col">Description</th>
-							</thead>
-							<tbody th:each="currToy: ${toyBin}" >
-								<th scope="row" th:text="${currToy.id}" th:href="@{toy/${currToy.id}}">#</th>
-								<td th:text="${currToy.name}">#</td>
-								<td th:text="${currToy.description}"><textarea rows="2" cols="3"></textarea></td>
-								<!--<td><a th:href="|dogs/passed/${dog.dogId}|" class="btn btn-danger" role="button">X</a></td>-->
-							</tbody>
-							<!-- <tbody>
-								<th scope="row">New Toy<input type="submit" style="display:none" /></th>
-								<td><input type="text" th:field="*{name}"/>#</td>
-								<td><input type="text" th:field="*{description}"/>#</td>
-							</tbody>-->
-						</table>
-					</form>
-				</div>
+		<div class="row">
+			<div class="col">
+				<form th:object="${toy}" method="post">
+					<table class="table">
+						<thead>
+							<th scope="col">#</th>
+							<th scope="col">Name</th>
+							<th scope="col">Description</th>
+						</thead>
+						<tbody th:each="currToy: ${toyBin}">
+							<th scope="row" th:text="${currToy.getId()}"></th>
+							<td th:text="${currToy.getName()}">#</td>
+							<td th:text="${currToy.description}"><textarea rows="2" cols="3"></textarea></td>
+							<!--<td><a th:href="|dogs/passed/${dog.dogId}|" class="btn btn-danger" role="button">X</a></td>-->
+						</tbody>
+						<tbody>
+							<th scope="row">New Toy<input type="submit" style="display:none" /></th>
+							<td><input type="text" th:field="*{name}"/></td>
+							<td><input type="text" th:field="*{description}"/></td>
+						</tbody>
+					</table>
+				</form>
 			</div>
+		</div>
+	</div>
 			
 	
 

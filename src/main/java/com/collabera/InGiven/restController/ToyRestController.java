@@ -1,4 +1,4 @@
-package com.collabera.restapi.restcontroller;
+package com.collabera.InGiven.restController;
 
 import java.net.URI;
 import java.net.URISyntaxException;
@@ -22,17 +22,16 @@ import com.collabera.InGiven.service.ToyService;
 
 @RestController
 @RequestMapping("/api")
-public class ToyController { // Add error handling
+public class ToyRestController { // Add error handling
 	private final ToyService service;
 	
 	@Autowired
-	public ToyController(ToyService service) {
+	public ToyRestController(ToyService service) {
 		this.service = service;
 	}
 	
 	@GetMapping("/toys")
 	public ResponseEntity<List<ToyDTO>> findAll() {
-		System.out.println("ME");
 		return ResponseEntity.ok(service.findAll());
 	}
 	
