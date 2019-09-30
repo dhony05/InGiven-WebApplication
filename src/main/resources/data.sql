@@ -4,4 +4,4 @@ VALUES
 ( 'Red Ball', 'Plenty of memories have into it, but still plenty more it can make.');
 
 INSERT INTO clothes (style, color, style)
-values("skinny","Blue","Medium);
+values('skinny','Blue','Medium');
