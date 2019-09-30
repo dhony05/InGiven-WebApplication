@@ -17,7 +17,7 @@ public class FrontEndController {
 	
 	@RequestMapping("/clothes")
 	public String goToClothes() {
-		return "Clothes";
+		return "clothes";
 	}
 	
 }
