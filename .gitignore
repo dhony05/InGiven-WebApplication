@@ -38,3 +38,16 @@ src/test/.DS_Store
 src/test/java/.DS_Store
 src/test/java/com/.DS_Store
 src/test/java/com/collabera/.DS_Store
+.metadata/.lock
+.metadata/.log
+.metadata/.plugins/com.genuitec.eclipse.devstyle/recent.json
+.metadata/.plugins/com.genuitec.eclipse.ui.common.platform/color-definitions-fix.css
+.metadata/.plugins/com.genuitec.eclipse.ui.common.platform/colors-org.eclipse.buildship.ui-1231266899.css
+.metadata/.plugins/com.genuitec.eclipse.ui.common.platform/colors-org.eclipse.egit.ui-1849137576.css
+.metadata/.plugins/com.genuitec.eclipse.ui.common.platform/colors-org.eclipse.epp.mpc.ui.css--1027399938.css
+.metadata/.plugins/com.genuitec.eclipse.ui.common.platform/colors-org.eclipse.jdt.ui-326703266.css
+.metadata/.plugins/com.genuitec.eclipse.ui.common.platform/splash-fix.css
+.metadata/.plugins/org.eclipse.core.resources/.root/.indexes/properties.index
+.metadata/.plugins/org.eclipse.m2e.logback.configuration/logback.1.13.0.20190716-1624.xml
+.metadata/.plugins/org.eclipse.ui.workbench/workingsets.xml
+.metadata/version.ini
