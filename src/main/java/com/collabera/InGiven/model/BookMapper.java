@@ -1,5 +1,8 @@
-package com.collabera.restapi.model;
+package com.collabera.InGiven.model;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class BookMapper {
 
 	public Book toEntity(BookDTO dto) {

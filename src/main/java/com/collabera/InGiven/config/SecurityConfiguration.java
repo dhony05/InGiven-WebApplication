@@ -1,4 +1,4 @@
-package com.collabera.restapi.config;
+package com.collabera.InGiven.config;
 
 import org.springframework.context.annotation.Configuration;
 
