@@ -51,3 +51,4 @@ src/test/java/com/collabera/.DS_Store
 .metadata/.plugins/org.eclipse.m2e.logback.configuration/logback.1.13.0.20190716-1624.xml
 .metadata/.plugins/org.eclipse.ui.workbench/workingsets.xml
 .metadata/version.ini
+.DS_Store
