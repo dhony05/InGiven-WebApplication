@@ -26,14 +26,6 @@ public class Clothes {
 		@Column (name = "Color")
 		private String color;
 
-		public Clothes(long id, String style, int size, String color) {
-			super();
-			this.id = id;
-			this.style = style;
-			this.size = size;
-			this.color = color;
-		}
-
 		public long getId() {
 			return id;
 		}
