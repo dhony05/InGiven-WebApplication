@@ -9,8 +9,15 @@ public class FrontEndController {
 	public String displayIndex() {
 		return "index";
 	}
+	
 	@RequestMapping("/toys")
 	public String goToToys() {
 		return "toys";
 	}
+	
+	@RequestMapping("/clothes")
+	public String goToClothes() {
+		return "clothes";
+	}
+	
 }
