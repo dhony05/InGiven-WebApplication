@@ -1,12 +1,13 @@
 package com.collabera.InGiven.webapp.controller.data;
 
-public class Cloths {
+public class Clothes {
+	
 	private long id;
 	private String style;
 	private String size;
 	private String color;
 	
-	public Cloths() {
+	public Clothes() {
 		super();
 	}
 
@@ -40,10 +41,5 @@ public class Cloths {
 
 	public void setColor(String color) {
 		this.color = color;
-	}
-	
-	@Override
-	public String toString() {
-		return "Clothes [id=" + id + ", style=" + style + ", color=" + color + ", size= " + size + "]";
 	}
 }
