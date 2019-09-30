@@ -1,5 +1,8 @@
 package com.collabera.restapi.model;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class ToyMapper { // should be static methods in their respective classes
 	public Toy toModel(ToyDTO in) {
 		Toy out = new Toy();
