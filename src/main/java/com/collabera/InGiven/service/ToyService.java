@@ -1,5 +1,4 @@
-
-package com.collabera.restapi.service;
+package com.collabera.InGiven.service;
 
 import java.util.List;
 import java.util.Optional;
@@ -8,10 +7,10 @@ import java.util.stream.Collectors;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.collabera.restapi.Repository.ToyRepository;
-import com.collabera.restapi.model.Toy;
-import com.collabera.restapi.model.ToyDTO;
-import com.collabera.restapi.model.ToyMapper;
+import com.collabera.InGiven.model.Toy;
+import com.collabera.InGiven.model.ToyDTO;
+import com.collabera.InGiven.model.ToyMapper;
+import com.collabera.InGiven.repository.ToyRepository;
 
 @Service
 public class ToyService {

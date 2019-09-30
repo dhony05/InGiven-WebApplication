@@ -1,16 +1,24 @@
-package com.collabera.restapi.model;
+package com.collabera.InGiven.model;
 
-import javax.persistence.Entity;
-import javax.persistence.Table;
-
-@Entity
-@Table (name = "books")
-public class Book {
-
-	public String title;
-	public String genre;
-	public String author;
-	public int publicationYear;
+public class BookDTO {
+   
+	private long id; 
+	
+	private String title;
+	
+	private String genre;
+	
+	private String author;
+	
+	private int publicationYear;
+	
+	
+	public long getId() {
+		return id;
+	}
+	public void setId(long id) {
+		this.id = id;
+	}
 	
 	
 	public String getTitle() {
@@ -37,5 +45,6 @@ public class Book {
 	public void setPublicationYear(int publicationYear) {
 		this.publicationYear = publicationYear;
 	}
+	
 	
 }

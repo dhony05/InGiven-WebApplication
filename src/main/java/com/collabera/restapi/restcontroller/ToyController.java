@@ -17,8 +17,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.collabera.restapi.model.ToyDTO;
-import com.collabera.restapi.service.ToyService;
+import com.collabera.InGiven.model.ToyDTO;
+import com.collabera.InGiven.service.ToyService;
 
 @RestController
 @RequestMapping("/api")
