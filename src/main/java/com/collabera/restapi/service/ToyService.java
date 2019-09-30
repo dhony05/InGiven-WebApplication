@@ -24,6 +24,7 @@ public class ToyService {
 	}
 	
 	public List<ToyDTO> findAll() {
+		System.out.println(repository.findAll().stream().map(toy -> mapper.toDTO(toy)).collect(Collectors.toList()));
 		return repository.findAll().stream().map(toy -> mapper.toDTO(toy)).collect(Collectors.toList());
 	}
 

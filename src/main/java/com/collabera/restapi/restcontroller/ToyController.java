@@ -32,6 +32,7 @@ public class ToyController { // Add error handling
 	
 	@GetMapping("/toys")
 	public ResponseEntity<List<ToyDTO>> findAll() {
+		System.out.println("ME");
 		return ResponseEntity.ok(service.findAll());
 	}
 	
@@ -43,7 +44,7 @@ public class ToyController { // Add error handling
 	@PostMapping("/toys")
 	public ResponseEntity<ToyDTO> create(@RequestBody @Valid ToyDTO new_toy) throws URISyntaxException {
 		ToyDTO result = service.save(new_toy);
-		return ResponseEntity.created(new URI("/api/dogs/" + result.getId())).body(result);
+		return ResponseEntity.created(new URI("/api/toys/" + result.getId())).body(result);
 	}
 	
 	@PutMapping("/toys")

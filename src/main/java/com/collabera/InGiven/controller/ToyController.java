@@ -4,8 +4,11 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import org.springframework.http.ResponseEntity;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.client.RestTemplate;
 
 public class ToyController {
@@ -16,9 +19,15 @@ public class ToyController {
 		String api_endpoint = URLNameSpace + "s";
 		List<Toy> toyList = Arrays.stream(restTemplate.getForObject(api_endpoint, Toy[].class))
 				.collect(Collectors.toList());
-		model.addAttribute("toys", toyList);
-//		model.addAttribute("message", "hello");
-		return "toys"; // classpath:resources/templates/dogs
+		System.out.println("List: " + toyList);
+		model.addAttribute("toyBin", toyList);
+		model.addAttribute("toy", new Toy());
+		return "toys";
+	}
+	@PostMapping
+	public String formSubmit(@ModelAttribute Toy toy, ModelMap model) {
+		ResponseEntity<Toy> response = restTemplate.postForEntity(URLNameSpace + "s", toy, Toy.class);
+		return "redirect:/toys"; 
 	}
 	class Toy {
 		private long id;
