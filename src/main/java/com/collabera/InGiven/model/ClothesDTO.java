@@ -2,7 +2,9 @@ package com.collabera.InGiven.model;
 
 public class ClothesDTO {
 	
-	private int id, size;
+	private long id;
+	
+	private int size;
 	
 	private String style, color;
 
@@ -18,11 +20,11 @@ public class ClothesDTO {
 		this.color = color;
 	}
 
-	public int getId() {
+	public long getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(long id) {
 		this.id = id;
 	}
 
@@ -49,7 +51,5 @@ public class ClothesDTO {
 	public void setColor(String color) {
 		this.color = color;
 	}
-	
-	
 
 }
