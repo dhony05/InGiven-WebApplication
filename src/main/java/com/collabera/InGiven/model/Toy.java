@@ -1,4 +1,4 @@
-package com.collabera.restapi.model;
+package com.collabera.InGiven.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

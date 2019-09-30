@@ -1,4 +1,4 @@
-package com.collabera.restapi.service;
+package com.collabera.InGiven.service;
 
 
 import java.util.List;
@@ -6,10 +6,11 @@ import java.util.stream.Collectors;
 import javax.transaction.Transactional;
 import org.springframework.stereotype.Service;
 import java.util.Optional;
-import com.collabera.restapi.Repository.BookRepository;
-import com.collabera.restapi.model.Book;
-import com.collabera.restapi.model.BookDTO;
-import com.collabera.restapi.model.BookMapper;
+
+import com.collabera.InGiven.model.Book;
+import com.collabera.InGiven.model.BookDTO;
+import com.collabera.InGiven.model.BookMapper;
+import com.collabera.InGiven.repository.BookRepository;
 
 @Service
 @Transactional

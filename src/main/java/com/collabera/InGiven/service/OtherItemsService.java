@@ -1,4 +1,4 @@
-package com.collabera.restapi.service;
+package com.collabera.InGiven.service;
 
 import java.util.List;
 import java.util.Optional;
@@ -7,10 +7,10 @@ import java.util.stream.Collectors;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.collabera.restapi.Repository.ItemRepository;
-import com.collabera.restapi.model.Item;
-import com.collabera.restapi.model.ItemDTO;
-import com.collabera.restapi.model.ItemMapper;
+import com.collabera.InGiven.model.Item;
+import com.collabera.InGiven.model.ItemDTO;
+import com.collabera.InGiven.model.ItemMapper;
+import com.collabera.InGiven.repository.ItemRepository;
 
 @Service
 @Transactional

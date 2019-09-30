@@ -63,27 +63,8 @@
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
 		</dependency>
-
-		<!-- https://mvnrepository.com/artifact/ch.fortysix/maven-postman-plugin -->
-		<dependency>
-			<groupId>ch.fortysix</groupId>
-			<artifactId>maven-postman-plugin</artifactId>
-			<version>0.1.0</version>
-		</dependency>
-
-		<!-- https://mvnrepository.com/artifact/org.springframework.security/spring-security-web -->
-		<dependency>
-			<groupId>org.springframework.security</groupId>
-			<artifactId>spring-security-web</artifactId>
-		</dependency>
-
-
-
-
-
+		
 	</dependencies>
-
-
 
 	<build>
 		<plugins>

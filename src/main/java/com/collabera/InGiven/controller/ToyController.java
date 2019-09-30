@@ -1,46 +1,60 @@
 package com.collabera.InGiven.controller;
 
-import java.util.Arrays;
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.util.List;
-import java.util.stream.Collectors;
 
-import org.springframework.ui.ModelMap;
+import javax.validation.Valid;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.client.RestTemplate;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
-public class ToyController {
-	private final RestTemplate restTemplate = new RestTemplate(); 
-	private final String URLNameSpace = "http://localhost:8080/api/toy";
-	@GetMapping
-	public String displayAllAndForms(ModelMap model) {
-		String api_endpoint = URLNameSpace + "s";
-		List<Toy> toyList = Arrays.stream(restTemplate.getForObject(api_endpoint, Toy[].class))
-				.collect(Collectors.toList());
-		model.addAttribute("toys", toyList);
-//		model.addAttribute("message", "hello");
-		return "toys"; // classpath:resources/templates/dogs
+import com.collabera.InGiven.model.ToyDTO;
+import com.collabera.InGiven.service.ToyService;
+
+@RestController
+@RequestMapping("/api")
+public class ToyController { // Add error handling
+	private final ToyService service;
+
+	@Autowired
+	public ToyController(ToyService service) {
+		this.service = service;
 	}
-	class Toy {
-		private long id;
-		private String name, description;
-		public long getId() {
-			return id;
-		}
-		public void setId(long id) {
-			this.id = id;
-		}
-		public String getName() {
-			return name;
-		}
-		public void setName(String name) {
-			this.name = name;
-		}
-		public String getDescription() {
-			return description;
-		}
-		public void setDescription(String description) {
-			this.description = description;
-		}
 
+	@GetMapping("/toys")
+	public ResponseEntity<List<ToyDTO>> findAll() {
+		return ResponseEntity.ok(service.findAll());
+	}
+
+	@GetMapping("/toys/{id}")
+	public ResponseEntity<ToyDTO> find(@PathVariable String id) {
+		return ResponseEntity.ok(service.find(Long.valueOf(id)));
+	}
+
+	@PostMapping("/toys")
+	public ResponseEntity<ToyDTO> create(@RequestBody @Valid ToyDTO new_toy) throws URISyntaxException {
+		ToyDTO result = service.save(new_toy);
+		return ResponseEntity.created(new URI("/api/dogs/" + result.getId())).body(result);
+	}
+
+	@PutMapping("/toys")
+	public ResponseEntity<ToyDTO> update(@RequestBody @Valid ToyDTO updated_toy) {
+		ToyDTO result = service.update(updated_toy);
+		return ResponseEntity.ok().body(result);
+	}
+
+	@DeleteMapping("/toys/delete/{id}")
+	public ResponseEntity<Void> delete(@PathVariable String id) {
+		service.delete(Long.valueOf(id));
+		return ResponseEntity.ok().build();
 	}
 }

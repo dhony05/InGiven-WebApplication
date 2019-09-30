@@ -1,4 +1,4 @@
-package com.collabera.restapi.model;
+package com.collabera.InGiven.model;
 
 public class ToyDTO {
 	private long id;

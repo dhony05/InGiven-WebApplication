@@ -1,11 +1,11 @@
-package com.collabera.restapi.Repository;
+package com.collabera.InGiven.repository;
 
 import java.util.List;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import com.collabera.restapi.model.Item;
+import com.collabera.InGiven.model.Item;
 
 @Repository
 public interface ItemRepository extends JpaRepository<Item,Long> {
