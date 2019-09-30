@@ -1,6 +1,8 @@
-package com.collabera.InGiven.model;
+package com.collabera.InGiven.restAPI.model.mapper;
 
 import org.springframework.stereotype.Component;
+
+import com.collabera.InGiven.restAPI.model.dto.ClothesDTO;
 
 @Component
 public class ClothesMapper { // should be static methods in their respective classes
