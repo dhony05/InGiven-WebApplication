@@ -3,6 +3,7 @@ package com.collabera.InGiven.restAPI.model.mapper;
 import org.springframework.stereotype.Component;
 
 import com.collabera.InGiven.restAPI.model.dto.ClothesDTO;
+import com.collabera.InGiven.restAPI.model.entity.Clothes;
 
 @Component
 public class ClothesMapper { // should be static methods in their respective classes
