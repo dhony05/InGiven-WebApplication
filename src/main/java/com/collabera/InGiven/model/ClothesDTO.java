@@ -1,4 +1,4 @@
-package com.collabera.InGiven.restAPI.model.dto;
+package com.collabera.InGiven.model;
 
 public class ClothesDTO {
 	
