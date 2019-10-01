@@ -20,8 +20,14 @@ public class Item {
 	private String category;
 	@Column(name = "quantity")
 	private int quantity;
+	
+	
+	
 	@Column(name = "zipCode")
 	private int zipCode;
+	
+	
+	
 	@Column(name = "date_posted")
 	private LocalDate datePosted;
 	
