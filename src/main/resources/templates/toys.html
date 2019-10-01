@@ -59,18 +59,38 @@
 							<th scope="col">#</th>
 							<th scope="col">Name</th>
 							<th scope="col">Description</th>
+							<th scope="col">Edit</th>
+							<th scope="col">Delete</th>
 						</thead>
-						<tbody th:each="currToy: ${toyBin}">
+						<tbody th:each="currToy: ${toyBin}" >
 							<th scope="row" th:text="${currToy.getId()}"></th>
 							<td th:text="${currToy.getName()}">#</td>
 							<td th:text="${currToy.description}"><textarea rows="2" cols="3"></textarea></td>
-							<!--<td><a th:href="|dogs/passed/${dog.dogId}|" class="btn btn-danger" role="button">X</a></td>-->
+							<td><a th:href="|toys/edit/${currToy.id}|" class="btn btn-info" role="button">Change</a></td>
+							<td><a th:href="|toys/delete/${currToy.id}|" class="btn btn-danger" role="button">X</a></td>
 						</tbody>
+						<!-- <tbody>
+							<th scope="row">Update<input type="submit" style="display:none" /></th>
+							<td><input type="text" th:field="*{name}" /></td>
+							<td><textarea th:field="*{description}" rows="1" cols="25" ></textarea></td>
+							<td><input type="submit" class="btn btn-info" value="Push"/></td>
+							<td></td>
+						</tbody> -->
 						<tbody>
-							<th scope="row">New Toy<input type="submit" style="display:none" /></th>
-							<td><input type="text" th:field="*{name}"/></td>
-							<td><input type="text" th:field="*{description}"/></td>
+							<th scope="row">
+								<div th:if="${toy.id}" th:text="|Update ${toy.name}|"></div>
+								<div th:unless="${toy.id}">New Toy</div>
+								<input type="hidden" th:field="*{id}"/>
+							</th>
+							<td>
+								<input th:if="${name_state == 1}" class="border border-danger" type="text" th:field="*{name}"/>
+								<input th:unless="${name_state}" type="text" th:field="*{name}"/>
+							</td>
+							<td><textarea th:field="*{description}" rows="1"></textarea></td>
+							<td><input type="submit" class="btn btn-info" value="Push"/></td>
+							<td></td>
 						</tbody>
+						
 					</table>
 				</form>
 			</div>
