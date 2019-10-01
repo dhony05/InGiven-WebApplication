@@ -4,7 +4,7 @@ public class ClothesDTO {
 	
 	private long id;
 	
-	private int size;
+	private String size;
 	
 	private String style, color;
 
@@ -12,7 +12,7 @@ public class ClothesDTO {
 		super();
 	}
 
-	public ClothesDTO(int id, int size, String style, String color) {
+	public ClothesDTO(int id, String size, String style, String color) {
 		super();
 		this.id = id;
 		this.size = size;
@@ -28,11 +28,11 @@ public class ClothesDTO {
 		this.id = id;
 	}
 
-	public int getSize() {
+	public String getSize() {
 		return size;
 	}
 
-	public void setSize(int size) {
+	public void setSize(String size) {
 		this.size = size;
 	}
 
