@@ -11,6 +11,6 @@ CREATE TABLE clothes
 (
    id BIGINT AUTO_INCREMENT PRIMARY KEY,
    style VARCHAR (16) not null,
-   color VARCHAR (16) not null,
-   size VARCHAR (10) not null
+   size VARCHAR (16) not null,
+   color VARCHAR (10) not null
 );
