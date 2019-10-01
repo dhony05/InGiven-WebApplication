@@ -55,8 +55,10 @@ public class OtherItem {
 		return datePosted;
 	}
 
-	public void setDatePosted(LocalDate datePosted) {
-		this.datePosted = datePosted;
+	public void setDatePosted(String datePosted) {
+		LocalDate  localdate = LocalDate.parse(datePosted);
+		this.datePosted = localdate;
+		System.out.println(datePosted);
 	}
 	
 	@Override

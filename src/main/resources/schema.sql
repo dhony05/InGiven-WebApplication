@@ -5,3 +5,15 @@ CREATE TABLE toy
    name VARCHAR (16) not null,
    description VARCHAR (140) not null,
 );
+
+
+DROP TABLE IF EXISTS Other_items;
+CREATE TABLE Other_items
+(
+   item_id BIGINT AUTO_INCREMENT PRIMARY KEY,
+   name VARCHAR (16) not null,
+   category VARCHAR (20) not null,
+   quantity INT not null,
+   zipCode INT not null,
+   date_posted DATE not null,
+);
