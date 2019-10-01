@@ -3,5 +3,5 @@ VALUES
 ( 'Nerf Gun', 'Slightly Used. Good luck finding the bullets after you shoot, I couldnt.'),
 ( 'Red Ball', 'Plenty of memories have into it, but still plenty more it can make.');
 
-INSERT INTO clothes (style, color, style)
-values('skinny','Blue','Medium');
+INSERT INTO clothes (style, color, size)
+VALUES('skinny','Blue','Medium');
