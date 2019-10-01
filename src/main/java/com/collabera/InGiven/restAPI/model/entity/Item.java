@@ -20,10 +20,8 @@ public class Item {
 	private String category;
 	@Column(name = "quantity")
 	private int quantity;
-	
-	
-	
-	@Column(name = "zipCode")
+
+	@Column(name = "zipcode")
 	private int zipCode;
 	
 	

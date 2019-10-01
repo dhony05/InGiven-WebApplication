@@ -14,10 +14,10 @@ public class ItemDTO {
 	@NotNull
 	private String category;
 	
-	@NotNull
+	
 	private int quantity;
 	
-	@NotNull
+	
 	private int zipCode;
 	
 	@NotNull
