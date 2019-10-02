@@ -9,5 +9,4 @@ VALUES
 ('TV','Electronic','2',10567,'2019-10-01');
 
 INSERT INTO clothes (style, color, size)
-VALUES('skinny','Blue','Medium');
-
+VALUES('skinny','Blue','Medium', 'https://www.publicdomainpictures.net/pictures/230000/velka/woman-devil-15052956815UU.jpg');

@@ -15,6 +15,7 @@ public class ClothesMapper { // should be static methods in their respective cla
 			out.setStyle(in.getStyle());
 			out.setSize(in.getSize());
 			out.setColor(in.getColor());
+			out.setImage(in.getImage());
 			return out;
 		}
 		public ClothesDTO toDTO(Clothes in) {
@@ -24,6 +25,7 @@ public class ClothesMapper { // should be static methods in their respective cla
 			out.setStyle(in.getStyle());
 			out.setSize(in.getSize());
 			out.setColor(in.getColor());
+			out.setImage(in.getImage());
 			return out;
 		}
 }

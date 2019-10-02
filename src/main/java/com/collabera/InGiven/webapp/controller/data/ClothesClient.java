@@ -1,13 +1,14 @@
 package com.collabera.InGiven.webapp.controller.data;
 
-public class Clothes {
+// @JsonIgnoreProperties (ignoreUnknown = true) ----> use it when you consume other jason files that have extra information
+public class ClothesClient {
 	
 	private long id;
 	private String style;
 	private String size;
-	private String color;
+	private String color,image;
 	
-	public Clothes() {
+	public ClothesClient() {
 		super();
 	}
 
@@ -42,4 +43,14 @@ public class Clothes {
 	public void setColor(String color) {
 		this.color = color;
 	}
+
+	public String getImage() {
+		return image;
+	}
+
+	public void setImage(String image) {
+		this.image = image;
+	}
+	
 }
+

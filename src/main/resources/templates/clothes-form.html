@@ -4,7 +4,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
+	
     <!-- Bootstrap CSS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" th:href="@{css/navbar-fixed-left.min.css}">
@@ -19,6 +19,7 @@
   			
   			<form action="#" th:action = "@{/clothes/save}"
   							 th:object = "${clothes}" method ="POST">
+  							 
 				<!-- Add a hidden form field to handle the update  --> 
  				<input type = "hidden" th:field = "*{id}"/>
   				
@@ -30,11 +31,14 @@
   							
   				<input type="text" th:field= "*{color}"
   							class = "form-control mb-4 col-4" placeholder = "Blue">
+  				
+  				<input type="text" th:field= "*{image}"
+  							class = "form-control mb-4 col-4" placeholder = "image address">
   							
   				<button type = "submit" class = "btn btn-info col-2">Save</button>
   			</form>	
   			<hr>
-  			<a th:href = "@{/clothes/list}"> Back to the Clothes List</a>
+  			<a th:href = "@{/clothing/findall}"> Back to the Clothes List</a>
   		</div>
   </body>
-  </html>
+</html>
