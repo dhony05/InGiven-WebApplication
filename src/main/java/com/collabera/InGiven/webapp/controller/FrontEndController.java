@@ -20,4 +20,8 @@ public class FrontEndController {
 		return "clothes";
 	}
 	
+	@RequestMapping("/other")
+	public String goToOther() {
+		return "otherItem";
+	}
 }

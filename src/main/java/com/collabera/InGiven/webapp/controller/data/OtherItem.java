@@ -1,27 +1,15 @@
-package com.collabera.InGiven.restAPI.model.dto;
-
+package com.collabera.InGiven.webapp.controller.data;
 
 import java.time.LocalDate;
 
-import javax.validation.constraints.NotNull;
-public class ItemDTO {
+public class OtherItem {
+	public Long item_id;
 	
-	private Long item_id;
+	public String name, category;
 	
-	@NotNull
-	private String name;
+	public int quantity, zipCode;
 	
-	@NotNull
-	private String category;
-	
-	
-	private int quantity;
-	
-	
-	private int zipCode;
-	
-	@NotNull
-	private LocalDate datePosted;
+	public LocalDate datePosted;
 
 	public Long getItem_id() {
 		return item_id;
@@ -67,9 +55,16 @@ public class ItemDTO {
 		return datePosted;
 	}
 
-	public void setDatePosted(LocalDate datePosted) {
-		this.datePosted = datePosted;
+	public void setDatePosted(String datePosted) {
+		LocalDate  localdate = LocalDate.parse(datePosted);
+		this.datePosted = localdate;
+		System.out.println(datePosted);
 	}
 	
+	@Override
+	public String toString() {
+		return "OtherItem [item_id=" + item_id + ", name=" + name + ", category=" + category + ", quantity=" + quantity
+				+ ", zipCode=" + zipCode + ", datePosted=" + datePosted + "]";
+	}
 
 }

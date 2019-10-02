@@ -27,21 +27,8 @@
 	            <li class="nav-item">
 	                <a class="nav-link" href="books">Books</a>
 	            </li>
-
 	            <li class="nav-item">
-	                <a class="nav-link" href="other">Other Items</a>
-
-	            <li class="nav-item active">
 	                <a class="nav-link" href="toys">Toys</a>
-	            </li>
-	            <li class="nav-item dropdown">
-	                <a class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Other</a>
-	                <div class="dropdown-menu">
-	                    <a class="dropdown-item" href="#">Holder</a>
-	                    <div class="dropdown-divider"></div>
-	                    <a class="dropdown-item" href="#">Holder</a>
-	                </div>
-
 	            </li>
 	           
 	        </ul>
@@ -51,52 +38,39 @@
 	<div class="container">
 	    <div class="jumbotron">
 	        <h1 class="display-4">
-	            Toys
-	            <br>
-	            <small>For All Ages</small>
+	            Other Items
 	        </h1>
 	    </div>
 	
 		<div class="row">
 			<div class="col">
-				<form th:object="${toy}" method="post">
+				<form th:object="${other}" method="post">
 					<table class="table">
 						<thead>
 							<th scope="col">#</th>
 							<th scope="col">Name</th>
-							<th scope="col">Description</th>
-							<th scope="col">Edit</th>
-							<th scope="col">Delete</th>
+							<th scope="col">Category</th>
+							<th scope="col">Quantity</th>
+							<th scope="col">Zip Code</th>
+							<th scope="col">Date Posted</th>
 						</thead>
-						<tbody th:each="currToy: ${toyBin}" >
-							<th scope="row" th:text="${currToy.getId()}"></th>
-							<td th:text="${currToy.getName()}">#</td>
-							<td th:text="${currToy.description}"><textarea rows="2" cols="3"></textarea></td>
-							<td><a th:href="|toys/edit/${currToy.id}|" class="btn btn-info" role="button">Change</a></td>
-							<td><a th:href="|toys/delete/${currToy.id}|" class="btn btn-danger" role="button">X</a></td>
-						</tbody>
-						<!-- <tbody>
-							<th scope="row">Update<input type="submit" style="display:none" /></th>
-							<td><input type="text" th:field="*{name}" /></td>
-							<td><textarea th:field="*{description}" rows="1" cols="25" ></textarea></td>
-							<td><input type="submit" class="btn btn-info" value="Push"/></td>
-							<td></td>
-						</tbody> -->
-						<tbody>
-							<th scope="row">
-								<div th:if="${toy.id}" th:text="|Update ${toy.name}|"></div>
-								<div th:unless="${toy.id}">New Toy</div>
-								<input type="hidden" th:field="*{id}"/>
-							</th>
-							<td>
-								<input th:if="${name_state == 1}" class="border border-danger" type="text" th:field="*{name}"/>
-								<input th:unless="${name_state}" type="text" th:field="*{name}"/>
-							</td>
-							<td><textarea th:field="*{description}" rows="1"></textarea></td>
-							<td><input type="submit" class="btn btn-info" value="Push"/></td>
-							<td></td>
-						</tbody>
-						
+						<tbody th:each="currentItem: ${otherItemBag}">
+							<th scope="row" th:text="${currentItem.getItem_id()}"></th>
+							<td th:text="${currentItem.getName()}"></td>
+							<td th:text="${currentItem.getCategory()}"></td>
+							<td th:text="${currentItem.getQuantity()}"></td>
+							<td th:text="${currentItem.getZipCode()}"></td>
+							<td th:text="${currentItem.getDatePosted()}"></td>
+							<!-- <td><a th:href=" class="btn btn-danger" role="button">X</a></td> -->
+						</tbody> 
+						  <tbody>
+							<th scope="row">New Item<input type="submit" style="display:none" /></th>
+							<td><input type="text" th:field="*{name}"/></td>
+							<td><input type="text" th:field="*{category}"/></td>
+							<td><input type="text" th:field="*{quantity}"/></td>
+							<td><input type="text" th:field="*{zipCode}"/></td>
+							<td><input type="text" th:field="*{datePosted}"/></td>
+						</tbody>  
 					</table>
 				</form>
 			</div>
