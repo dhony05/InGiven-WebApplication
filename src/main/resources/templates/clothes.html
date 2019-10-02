@@ -81,7 +81,7 @@
 						
 						<td th:text="${tempClothes.color}" />
 						
-						<td> <img th:src= "${tempPatient.image}" alt = "Profile Picture" width = "100px" height = "100px"> </td>						
+						<td> <img th:src= "${tempClothes.image}" alt = "Profile Picture" width = "100px" height = "100px"> </td>						
 						
 						
 						<td> <a th:href ="@{/clothes/showFormForUpdate(clothesId=${tempClothes.id})}"
