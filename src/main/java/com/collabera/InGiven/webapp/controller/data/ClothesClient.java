@@ -6,7 +6,7 @@ public class ClothesClient {
 	private long id;
 	private String style;
 	private String size;
-	private String color;
+	private String color,image;
 	
 	public ClothesClient() {
 		super();
@@ -43,4 +43,14 @@ public class ClothesClient {
 	public void setColor(String color) {
 		this.color = color;
 	}
+
+	public String getImage() {
+		return image;
+	}
+
+	public void setImage(String image) {
+		this.image = image;
+	}
+	
 }
+

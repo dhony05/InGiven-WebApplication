@@ -6,13 +6,13 @@ public class ClothesDTO {
 	
 	private String size;
 	
-	private String style, color;
+	private String style, color, image;
 
 	public ClothesDTO() {
 		super();
 	}
 
-	public ClothesDTO(int id, String size, String style, String color) {
+	public ClothesDTO(int id, String size, String style, String color, String image) {
 		super();
 		this.id = id;
 		this.size = size;
@@ -52,4 +52,13 @@ public class ClothesDTO {
 		this.color = color;
 	}
 
+	public String getImage() {
+		return image;
+	}
+
+	public void setImage(String image) {
+		this.image = image;
+	}
+
+	
 }

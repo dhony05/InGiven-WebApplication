@@ -25,6 +25,9 @@ public class Clothes {
 		
 		@Column (name = "color")
 		private String color;
+		
+		@Column (name = "image")
+		private String image;
 
 		public long getId() {
 			return id;
@@ -56,6 +59,14 @@ public class Clothes {
 
 		public void setColor(String color) {
 			this.color = color;
+		}
+
+		public String getImage() {
+			return image;
+		}
+
+		public void setImage(String image) {
+			this.image = image;
 		}
 		
 		

@@ -65,6 +65,7 @@
   					<th>Style  </th>
   					<th>Size  </th>
   					<th>Color  </th>
+  					<th> Image </th>
   					<th colspan = 2>Action </th>
   				</tr>
   			</thead>
@@ -79,6 +80,9 @@
 						<td th:text="${tempClothes.size}" />	
 						
 						<td th:text="${tempClothes.color}" />
+						
+						<td> <img th:src= "${tempPatient.image}" alt = "Profile Picture" width = "100px" height = "100px"> </td>						
+						
 						
 						<td> <a th:href ="@{/clothes/showFormForUpdate(clothesId=${tempClothes.id})}"
 								class = "btn btn-info btn-sm"> Update </a>
