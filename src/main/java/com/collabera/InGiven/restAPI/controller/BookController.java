@@ -1,4 +1,4 @@
-package com.collabera.InGiven.webapp.controller;
+package com.collabera.InGiven.restAPI.controller;
 
 import java.util.List;
 
@@ -21,10 +21,10 @@ public class BookController {
       this.bookService=bookService;
     }
 	
-	@GetMapping("/test")
-	public String test() {
-		return "here";
-	}
+//	@GetMapping("/test")
+//	public String test() {
+//		return "here";
+//	}
 	
 	@GetMapping("/books")
 	public List<BookDTO> getAll(){

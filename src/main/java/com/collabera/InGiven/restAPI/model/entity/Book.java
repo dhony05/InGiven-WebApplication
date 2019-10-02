@@ -1,5 +1,6 @@
 package com.collabera.InGiven.restAPI.model.entity;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -20,6 +21,7 @@ public class Book {
 	@NotBlank
 	private String author;
 	@NotBlank
+	@Column(name="publicationyear")
 	private int publicationYear;
 	
 	
