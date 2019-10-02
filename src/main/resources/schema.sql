@@ -28,5 +28,5 @@ CREATE TABLE clothes
    style VARCHAR (16) not null,
    size VARCHAR (16) not null,
    color VARCHAR (10) not null,
-   image VARCHAR (255) not null
+   image TEXT(8000) not null
 );

@@ -8,5 +8,5 @@ INSERT INTO Other_items(name,category,quantity,zipCode,date_posted)
 VALUES
 ('TV','Electronic','2',10567,'2019-10-01');
 
-INSERT INTO clothes (style, color, size)
-VALUES('skinny','Blue','Medium', 'https://www.publicdomainpictures.net/pictures/230000/velka/woman-devil-15052956815UU.jpg');
+INSERT INTO clothes (style, color, size, image)
+VALUES('skinny','Blue','Medium', 'https://images-na.ssl-images-amazon.com/images/I/71Fpi4avVkL._AC_UX679_.jpg');

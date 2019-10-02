@@ -10,47 +10,50 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" th:href="@{css/navbar-fixed-left.min.css}">
     <link rel="stylesheet" th:href="@{css/index.css}">
-
     <title>InGiven</title>
 </head>
 
-<body>
+<body >
 
     <!--   					Start of the NavBar 			-->
-        <div class="row">
-            <div class="col-lg">
-                <nav class="navbar navbar-primary bg-dark fixed-left" data-target="#paths">
-                    <h1><a href="#">InGiven</a></h1>
-                    <div class="sidebar-header d-flex" id="paths">
-                        <ul class="navbar-nav">
-                            <li class="nav-item">
-                                <a class="nav-link" href="/">Home</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link active" href="">Clothing</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="books">Books</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="toys">Toys</a>
-                            </li>
-                            <li class="nav-item">
-	                <a class="nav-link" href="other">Other Items</a>
-	               </li>
-                        </ul>
-                </nav>
-            </div>
+
+    <div class="row">
+        <div class="col-lg">
+            <nav class="navbar navbar-primary fixed-left" data-target="#paths" style="background-image: url('https://www.abc.net.au/cm/rimage/9997840-16x9-xlarge.jpg?v=5');">
+                <h1><a href="#" class="text-white font-weight-bold bg-dark">InGiven</a></h1>
+                <div class="sidebar-header d-flex" id="paths">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link text-white font-weight-bold bg-dark" href="/">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white font-weight-bold bg-dark" href="http://localhost:8080/clothes">Clothing</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white font-weight-bold bg-dark" href="http://localhost:8080/books">Books</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white font-weight-bold bg-dark" href="http://localhost:8080/toys">Toys</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white font-weight-bold bg-dark" href="http://localhost:8080/other">Other Items</a>
+                        </li>
+                    </ul>
+
+            </nav>
+
         </div>
-        <!-- Start of the Description-->
-        <div class="col-lg-12">
-            <h1 class="display-6"> Donate your Clothes!</h1>
-            <br>
-        </div>
+    </div>
+    <!-- Start of the Description-->
+    <div class "row">
+        <h1 class="display-6"> Donate your Clothes!</h1>
+        <br>
+    </div>
+    <div class="container" style="background-image: url('https://images.pexels.com/photos/953214/pexels-photo-953214.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260');">
         <!-- Add Clothes -->
         <div class="row">
             <div class="col-lg-12">
-                <a style="display: block; width: 20%;  height:90% ;" th:href="@{/clothes/showFormForAdd}" class="btn btn-success btn-sm mb-3"> Add Clothes </a>
+                <a style="display: block; width: 20%;  height:90%;" th:href="@{/clothes/showFormForAdd}" class="btn btn-success btn-sm mb-3"> Add Clothes </a>
             </div>
         </div>
         <div class="row">
@@ -63,20 +66,20 @@
                             <th style="padding-top: 20px; padding-right: 20px; padding-bottom: 20px; padding-left: 20px;">Size </th>
                             <th style="padding-top: 20px; padding-right: 20px; padding-bottom: 20px; padding-left: 20px;">Color </th>
                             <th style="padding-top: 20px; padding-right: 20px; padding-bottom: 20px; padding-left: 20px;">Image </th>
-                            <th colspan=2>Action </th>
+                            <th style="padding-top: 20px; padding-right: 20px; padding-bottom: 20px; padding-left: 20px;"colspan=2>Action </th>
                         </tr>
                     </thead>
 
                     <tbody>
                         <tr th:each="tempClothes: ${link}">
 
-                            <td th:text="${tempClothes.id}" />
+                            <td class = "text-white font-weight-bold" th:text="${tempClothes.id}" />
 
-                            <td th:text="${tempClothes.style}" />
+                            <td class = "text-white font-weight-bold" th:text="${tempClothes.style}" />
 
-                            <td th:text="${tempClothes.size}" />
+                            <td class = "text-white font-weight-bold" th:text="${tempClothes.size}" />
 
-                            <td th:text="${tempClothes.color}" />
+                            <td class = "text-white font-weight-bold" th:text="${tempClothes.color}" />
 
                             <td> <img th:src="${tempClothes.image}" alt="Profile Picture" class="img-rounded" width="100px" height="100px"> </td>
 
@@ -93,7 +96,7 @@
                 </table>
             </div>
         </div>
-
+    </div>
     <!-- Optional JavaScript -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
