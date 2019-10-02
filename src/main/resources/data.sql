@@ -6,7 +6,7 @@ VALUES
 
 INSERT INTO Other_items(name,category,quantity,zipCode,date_posted)
 VALUES
-('TV','Electronic',2,10567,'2019-10-01');
+('TV','Electronic','2',10567,'2019-10-01');
 
 INSERT INTO clothes (style, color, size)
 VALUES('skinny','Blue','Medium');

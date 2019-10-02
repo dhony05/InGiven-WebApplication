@@ -12,13 +12,11 @@ public class ItemDTO {
 	private String name;
 	
 	@NotNull
-	private String category;
+	private String category,zipcode;
 	
 	
-	private int quantity;
+	private int quantity = 1;
 	
-	
-	private int zipCode;
 	
 	@NotNull
 	private LocalDate datePosted;
@@ -55,12 +53,12 @@ public class ItemDTO {
 		this.quantity = quantity;
 	}
 
-	public int getZipCode() {
-		return zipCode;
+	public String getZipCode() {
+		return zipcode;
 	}
 
-	public void setZipCode(int zipCode) {
-		this.zipCode = zipCode;
+	public void setZipCode(String zipCode) {
+		this.zipcode = zipCode;
 	}
 
 	public LocalDate getDatePosted() {
