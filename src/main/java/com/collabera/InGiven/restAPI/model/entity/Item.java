@@ -22,7 +22,7 @@ public class Item {
 	private int quantity;
 
 	@Column(name = "zipcode")
-	private int zipCode;
+	private String zipcode;
 	
 	
 	
@@ -63,12 +63,12 @@ public class Item {
 		this.quantity = quantity;
 	}
 
-	public int getZipCode() {
-		return zipCode;
+	public String getZipCode() {
+		return zipcode;
 	}
 
-	public void setZipCode(int zipCode) {
-		this.zipCode = zipCode;
+	public void setZipCode(String string) {
+		this.zipcode = string;
 	}
 
 	public LocalDate getDatePosted() {

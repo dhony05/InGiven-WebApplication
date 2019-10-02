@@ -5,9 +5,9 @@ import java.time.LocalDate;
 public class OtherItem {
 	public Long item_id;
 	
-	public String name, category;
+	public String name, category, zipcode;
 	
-	public int quantity, zipCode;
+	public int quantity = 1;
 	
 	public LocalDate datePosted;
 
@@ -43,12 +43,12 @@ public class OtherItem {
 		this.quantity = quantity;
 	}
 
-	public int getZipCode() {
-		return zipCode;
+	public String getZipCode() {
+		return zipcode;
 	}
 
-	public void setZipCode(int zipCode) {
-		this.zipCode = zipCode;
+	public void setZipCode(String zipCode) {
+		this.zipcode = zipCode;
 	}
 
 	public LocalDate getDatePosted() {
@@ -64,7 +64,7 @@ public class OtherItem {
 	@Override
 	public String toString() {
 		return "OtherItem [item_id=" + item_id + ", name=" + name + ", category=" + category + ", quantity=" + quantity
-				+ ", zipCode=" + zipCode + ", datePosted=" + datePosted + "]";
+				+ ", zipCode=" + zipcode + ", datePosted=" + datePosted + "]";
 	}
 
 }
