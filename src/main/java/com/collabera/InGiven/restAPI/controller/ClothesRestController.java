@@ -25,13 +25,13 @@ public class ClothesRestController {
 	public ClothesRestController(ClothesService theClothesService) {
 		clothesService = theClothesService;
 	}
-	@GetMapping("/clothing")
+	@GetMapping("/clothes")
 	public List<Clothes> getClothes(){
 		
 			return clothesService.findAll();
 	}
 	
-	@GetMapping("/clothing/{clothesId}")
+	@GetMapping("/clothes/{clothesId}")
 	public Clothes getclothes(@PathVariable int clothesId){
 		
 		Clothes theClothes = clothesService.findById(clothesId);
@@ -43,7 +43,7 @@ public class ClothesRestController {
 			return theClothes;
 	}
 	
-	@PostMapping("/clothing")
+	@PostMapping("/clothes")
 	public Clothes addClothes(@RequestBody Clothes theClothes) {
 				
 		theClothes.setId(0);
@@ -54,7 +54,7 @@ public class ClothesRestController {
 	}
 	
 	
-	@PutMapping("/clothing")
+	@PutMapping("/clothes")
 	public Clothes updateClothes(@RequestBody Clothes theClothes) {
 		
 		clothesService.save(theClothes);
@@ -62,7 +62,7 @@ public class ClothesRestController {
 		return theClothes;
 	}
 		
-	@DeleteMapping("/clothing/{clothesId}")
+	@DeleteMapping("clothes/{clothesId}")
 	public String deleteClothes(@PathVariable int clothesId) {
 		
 		Clothes tempClothes = clothesService.findById(clothesId);
