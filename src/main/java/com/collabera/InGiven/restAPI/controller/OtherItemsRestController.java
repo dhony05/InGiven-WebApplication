@@ -1,5 +1,4 @@
-package com.collabera.InGiven.webapp.controller;
-
+package com.collabera.InGiven.restAPI.controller;
 
 
 import java.net.URI;
@@ -23,15 +22,15 @@ import com.collabera.InGiven.restAPI.model.service.OtherItemsService;
 
 @RestController
 @RequestMapping("/api")
-public class OtherITemsController {
+public class OtherItemsRestController {
 	
 	public final OtherItemsService otherItemsService;
 
-	public OtherITemsController(OtherItemsService otherItemsService) {
+	public OtherItemsRestController(OtherItemsService otherItemsService) {
 		this.otherItemsService = otherItemsService;
 	}
 	
-	@GetMapping("/other%20%items")
+	@GetMapping("/other")
 	public List<ItemDTO> getAll() {
 		return otherItemsService.getAllItems();
 	}
@@ -54,7 +53,7 @@ public class OtherITemsController {
 		return ResponseEntity.ok().body(result);
 	}
 	
-	@DeleteMapping("/other/{id}")
+	@DeleteMapping("/other/delete/{id}")
 	public ResponseEntity<Void> delete(@PathVariable Long id) {
 		otherItemsService.delete(id);
 		return ResponseEntity.ok().build();

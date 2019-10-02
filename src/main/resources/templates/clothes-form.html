@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en" dir="ltr" xmlns:th="htttp://www.thymeleaf.org">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	
+    <!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" th:href="@{css/navbar-fixed-left.min.css}">
+    <link rel="stylesheet" th:href="@{css/index.css}">
+        <title>Donate Clothes</title>
+  </head>
+  <body>
+  		<div class ="container">
+  			<h3> Clothes Directory</h3>
+  			
+  			<p class= "h4 mb-4"> Save Clothes </p>
+  			
+  			<form action="#" th:action = "@{/clothes/save}"
+  							 th:object = "${clothes}" method ="POST">
+  							 
+				<!-- Add a hidden form field to handle the update  --> 
+ 				<input type = "hidden" th:field = "*{id}"/>
+  				
+  				<input type="text" th:field= "*{style}"
+  							class = "form-control mb-4 col-4" placeholder = "Skinny">
+  							
+  				<input type="text" th:field= "*{size}"
+  							class = "form-control mb-4 col-4" placeholder = "Medium">
+  							
+  				<input type="text" th:field= "*{color}"
+  							class = "form-control mb-4 col-4" placeholder = "Blue">
+  				
+  				<input type="text" th:field= "*{image}"
+  							class = "form-control mb-4 col-4" placeholder = "image address">
+  							
+  				<button type = "submit" class = "btn btn-info col-2">Save</button>
+  			</form>	
+  			<hr>
+  			<a th:href = "@{/clothing/findall}"> Back to the Clothes List</a>
+  		</div>
+  </body>
+</html>

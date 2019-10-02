@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    
+    <link rel="stylesheet" th:href="@{css/navbar-fixed-left.min.css}">
+    <link rel="stylesheet" th:href="@{css/index.css}">
+    
+    <title>InGiven</title>
+  </head>
+  <body>
+	<nav class="navbar navbar-dark bg-primary fixed-left d-flex" data-target="#paths">
+	    <a class="navbar-brand" href="#">InGiven</a>
+	    <div id="paths">
+	        <ul class="navbar-nav">
+	            <li class="nav-item">
+	                <a class="nav-link" href="/">Home</a>
+	            </li>
+	            <li class="nav-item">
+	                <a class="nav-link" href="clothes">Clothing</a>
+	            </li>
+	            <li class="nav-item">
+	                <a class="nav-link" href="books">Books</a>
+	            </li>
+	            <li class="nav-item">
+	                <a class="nav-link" href="toys">Toys</a>
+	            </li>
+	            <li class="nav-item">
+	                <a class="nav-link" href="other">Other Items</a>
+	            </li>
+	           
+	        </ul>
+	    </div>
+	</nav>
+	
+	<div class="container">
+	    <div class="jumbotron">
+	        <h1 class="display-4">
+	            Other Items
+	        </h1>
+	    </div>
+	
+		<div class="row">
+			<div class="col">
+				<form th:object="${other}" method="post">
+					<table class="table">
+						<thead>
+							<th scope="col">#</th>
+							<th scope="col">Name</th>
+							<th scope="col">Category</th>
+							<th scope="col">Quantity</th>
+							<th scope="col">Zip Code</th>
+							<th scope="col">Date Posted</th>
+							<th scope="col">Edit</th>
+							<th scope="col">Delete</th>
+						</thead>
+						<tbody th:each="currentItem: ${otherItemBag}">
+							<th scope="row" th:text="${currentItem.getItem_id()}"></th>
+							<td th:text="${currentItem.getName()}"></td>
+							<td th:text="${currentItem.getCategory()}"></td>
+							<td th:text="${currentItem.getQuantity()}"></td>
+							<td th:text="${currentItem.getZipCode()}"></td>
+							<td th:text="${currentItem.getDatePosted()}"></td>
+							 <td><a th:href="|other/edit/${currentItem.item_id}|"
+							class="btn btn-info" role="button">Change</a></td> 
+						< 	<td><a th:href="|other/delete/${currentItem.item_id}|"
+								class="btn btn-danger" role="button">X</a></td> 
+							<!-- <td><a th:href=" class="btn btn-danger" role="button">X</a></td> -->
+						</tbody> 
+						  <tbody>
+							<th scope="row">New Item<input type="submit" style="display:none" /></th>
+							<td><input type="text" th:field="*{name}"required/></td>
+							<td><input type="text" th:field="*{category}"required/></td>
+							<td><input type="text" th:field="*{quantity}"required/></td>
+							<td><input type="text" th:field="*{zipCode}"required/></td>
+							<td><input type="text" th:field="*{datePosted}" required/></td>
+						</tbody>  
+					</table>
+				</form>
+			</div>
+		</div>
+	</div>
+			
+	
+
+
+
+
+
+
+
+    <!-- Optional JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  	<script th:src="@{js/index.js}"></script>
+  </body>
+</html>

@@ -21,10 +21,13 @@ public class Clothes {
 		private String style;
 		
 		@Column(name = "size")
-		private int size;
+		private String size;
 		
-		@Column (name = "Color")
+		@Column (name = "color")
 		private String color;
+		
+		@Column (name = "image")
+		private String image;
 
 		public long getId() {
 			return id;
@@ -42,11 +45,11 @@ public class Clothes {
 			this.style = style;
 		}
 
-		public int getSize() {
+		public String getSize() {
 			return size;
 		}
 
-		public void setSize(int size) {
+		public void setSize(String size) {
 			this.size = size;
 		}
 
@@ -56,6 +59,14 @@ public class Clothes {
 
 		public void setColor(String color) {
 			this.color = color;
+		}
+
+		public String getImage() {
+			return image;
+		}
+
+		public void setImage(String image) {
+			this.image = image;
 		}
 		
 		

@@ -1,23 +1,15 @@
-package com.collabera.InGiven.restAPI.model.dto;
+package com.collabera.InGiven.webapp.controller.data;
 
-public class ClothesDTO {
+// @JsonIgnoreProperties (ignoreUnknown = true) ----> use it when you consume other jason files that have extra information
+public class ClothesClient {
 	
 	private long id;
-	
+	private String style;
 	private String size;
+	private String color,image;
 	
-	private String style, color, image;
-
-	public ClothesDTO() {
+	public ClothesClient() {
 		super();
-	}
-
-	public ClothesDTO(int id, String size, String style, String color, String image) {
-		super();
-		this.id = id;
-		this.size = size;
-		this.style = style;
-		this.color = color;
 	}
 
 	public long getId() {
@@ -28,20 +20,20 @@ public class ClothesDTO {
 		this.id = id;
 	}
 
-	public String getSize() {
-		return size;
-	}
-
-	public void setSize(String size) {
-		this.size = size;
-	}
-
 	public String getStyle() {
 		return style;
 	}
 
 	public void setStyle(String style) {
 		this.style = style;
+	}
+
+	public String getSize() {
+		return size;
+	}
+
+	public void setSize(String size) {
+		this.size = size;
 	}
 
 	public String getColor() {
@@ -59,6 +51,6 @@ public class ClothesDTO {
 	public void setImage(String image) {
 		this.image = image;
 	}
-
 	
 }
+

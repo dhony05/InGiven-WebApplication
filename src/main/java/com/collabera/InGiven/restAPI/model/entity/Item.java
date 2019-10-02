@@ -20,8 +20,12 @@ public class Item {
 	private String category;
 	@Column(name = "quantity")
 	private int quantity;
-	@Column(name = "zipCode")
-	private int zipCode;
+
+	@Column(name = "zipcode")
+	private String zipcode;
+	
+	
+	
 	@Column(name = "date_posted")
 	private LocalDate datePosted;
 	
@@ -59,12 +63,12 @@ public class Item {
 		this.quantity = quantity;
 	}
 
-	public int getZipCode() {
-		return zipCode;
+	public String getZipCode() {
+		return zipcode;
 	}
 
-	public void setZipCode(int zipCode) {
-		this.zipCode = zipCode;
+	public void setZipCode(String string) {
+		this.zipcode = string;
 	}
 
 	public LocalDate getDatePosted() {
