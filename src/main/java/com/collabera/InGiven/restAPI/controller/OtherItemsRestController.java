@@ -53,7 +53,7 @@ public class OtherItemsRestController {
 		return ResponseEntity.ok().body(result);
 	}
 	
-	@DeleteMapping("/other/{id}")
+	@DeleteMapping("/other/delete/{id}")
 	public ResponseEntity<Void> delete(@PathVariable Long id) {
 		otherItemsService.delete(id);
 		return ResponseEntity.ok().build();
