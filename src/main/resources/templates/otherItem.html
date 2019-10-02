@@ -30,6 +30,9 @@
 	            <li class="nav-item">
 	                <a class="nav-link" href="toys">Toys</a>
 	            </li>
+	            <li class="nav-item">
+	                <a class="nav-link" href="other">Other Items</a>
+	            </li>
 	           
 	        </ul>
 	    </div>
@@ -53,6 +56,8 @@
 							<th scope="col">Quantity</th>
 							<th scope="col">Zip Code</th>
 							<th scope="col">Date Posted</th>
+							<th scope="col">Edit</th>
+							<th scope="col">Delete</th>
 						</thead>
 						<tbody th:each="currentItem: ${otherItemBag}">
 							<th scope="row" th:text="${currentItem.getItem_id()}"></th>
@@ -61,15 +66,19 @@
 							<td th:text="${currentItem.getQuantity()}"></td>
 							<td th:text="${currentItem.getZipCode()}"></td>
 							<td th:text="${currentItem.getDatePosted()}"></td>
+							 <td><a th:href="|other/edit/${currentItem.item_id}|"
+							class="btn btn-info" role="button">Change</a></td> 
+						< 	<td><a th:href="|other/delete/${currentItem.item_id}|"
+								class="btn btn-danger" role="button">X</a></td> 
 							<!-- <td><a th:href=" class="btn btn-danger" role="button">X</a></td> -->
 						</tbody> 
 						  <tbody>
 							<th scope="row">New Item<input type="submit" style="display:none" /></th>
-							<td><input type="text" th:field="*{name}"/></td>
-							<td><input type="text" th:field="*{category}"/></td>
-							<td><input type="text" th:field="*{quantity}"/></td>
-							<td><input type="text" th:field="*{zipCode}"/></td>
-							<td><input type="text" th:field="*{datePosted}"/></td>
+							<td><input type="text" th:field="*{name}"required/></td>
+							<td><input type="text" th:field="*{category}"required/></td>
+							<td><input type="text" th:field="*{quantity}"required/></td>
+							<td><input type="text" th:field="*{zipCode}"required/></td>
+							<td><input type="text" th:field="*{datePosted}" required/></td>
 						</tbody>  
 					</table>
 				</form>

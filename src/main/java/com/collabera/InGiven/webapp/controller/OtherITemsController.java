@@ -11,10 +11,14 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.client.RestTemplate;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.collabera.InGiven.webapp.controller.data.OtherItem;
+import com.collabera.InGiven.webapp.controller.data.Toy;
 
 @Controller
 //@RequestMapping(/other)
@@ -44,12 +48,19 @@ public class OtherItemsController {
 //		restTemplate.delete(url);
 	}
 	
-	@DeleteMapping("/other")
-	public String DeleteFromForm() {
-		restTemplate.delete(URLNameSpace);
-		
+
+	@RequestMapping("/other/edit/{id}")
+	public String setUpEdit(@PathVariable String id, Model model, RedirectAttributes redirect_model) {
+		redirect_model.addFlashAttribute("editOther", restTemplate.getForObject(URLNameSpace +"/"+id, OtherItem.class));
+//		displayAllAndForms(model);
+//		model.
+		System.out.println("testing.......");
 		return "redirect:/other";
-		
+	}
+	@RequestMapping("other/delete/{id}")
+	public String deleteItem(@PathVariable String id) {
+		restTemplate.delete(URLNameSpace + "/delete/" +id);
+		return "redirect:/other";
 	}
 }
 

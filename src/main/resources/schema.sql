@@ -16,7 +16,7 @@ CREATE TABLE Other_items
    name VARCHAR (16) not null,
    category VARCHAR (20) not null,
    quantity INT not null,
-   zipCode INT not null,
+   zipcode VARCHAR(10) not null,
    date_posted DATE not null,
 );
 
