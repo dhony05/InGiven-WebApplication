@@ -20,7 +20,6 @@ public class ClothesWebController {
 			
 			// load the Clothes data
 			private ClothesService clothesService;
-			
 
 			@Autowired
 			public ClothesWebController(ClothesService theClothesService) {
@@ -28,7 +27,6 @@ public class ClothesWebController {
 			}
 
 			// add mapping for "/list"
-
 			@GetMapping("/list")
 			public String listclothes(Model theModel) {
 				
@@ -44,7 +42,6 @@ public class ClothesWebController {
 			public String ShowFormForAdd (Model theModel) {
 				
 				//create the model attribute
-				
 				Clothes theClothes = new Clothes();
 				
 				theModel.addAttribute("clothes",theClothes);
@@ -55,7 +52,6 @@ public class ClothesWebController {
 			public String ShowFormForUpdate(@RequestParam("clothesId") int theId, Model theModel) {
 				
 				//get the clothes from the service
-				
 				Clothes theClothes = clothesService.findById(theId);
 
 				//set clothes as a model attribute to pre-populate the form
@@ -69,6 +65,7 @@ public class ClothesWebController {
 			public String delete(@RequestParam("clothesId") int theId) {
 				//delete the clothes
 				clothesService.deleteById(theId);
+				
 				// redirect to the list
 				return "redirect:/clothes/list";
 			}
@@ -78,6 +75,7 @@ public class ClothesWebController {
 				
 				// save the clothes
 				clothesService.save(theClothes);
+				
 				// use a redirect to prevent duplicate submissions
 				return "redirect:/clothes/list";
 			}

@@ -23,7 +23,7 @@ public class Clothes {
 		@Column(name = "size")
 		private String size;
 		
-		@Column (name = "Color")
+		@Column (name = "color")
 		private String color;
 
 		public long getId() {
